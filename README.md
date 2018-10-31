@@ -1,5 +1,5 @@
 # laravel-docker-postgres
-Simple docker-compose for Laravel, with postgresql, reddis, nginx, php-fpm
+Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 # Pre-requisites
 * Docker running on the host machine.
 * Docker compose running on the host machine.
@@ -9,18 +9,18 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx, php-fpm
 # Installation
 + To get started, the following steps needs to be taken:
 + Clone the repo.
-+ cd to the project directory.
-+ cd to web and run the command to create a new Laravel project into **application** directory.
-+ cd .. to back the project directory.
++ `cd laravel-docker-postgres` to the project directory.
++ `cd` to web and run the command to create a new Laravel project into **application** directory.
++ `cd ..` to back the project directory.
 + Run `docker-compose up -d` to start the containers.
 + Visit http://localhost to see your Laravel application.
-+ Try connect 127.0.0.1:5432 to acess Postgres
-+ After start, note that one directory and one file will be created with name *postgres* and file *data*, this files are Database archives
++ Try to connect 127.0.0.1:5432 to access Postgres
++ After starting, note that one directory and one file will be created with name *postgres* and file *data*, this files are Database archives
 
 # usage:
 + `docker-compose up -d` to start all containers
 + `docker-compose down` to stop all containers
-+ If you need to restart after modifying *docker-compose.yml* or *Dockerfile* into php-fpm directory, 
++ If you need to restart after modifying *docker-compose.yml* restart with `docker-compose down` and `docker-compose up -d`
 
 # Images
 + redis:alpine
@@ -49,7 +49,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx, php-fpm
 
 ## If you need to restart after modifying *Dockerfile* and have Troubleshooting:
 + Verify all containers running: `docker ps -a`
-+ Stop all containers e remove: `docker stop $(docker ps -a -q)` and `docker rm $(docker ps -a -q)`
++ Stop all containers and remove: `docker stop $(docker ps -a -q)` and `docker rm $(docker ps -a -q)`
 + Try to start again `docker-compose up -d`
 
 
