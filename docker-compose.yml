@@ -3,17 +3,17 @@ services:
 
     redis:
       image: redis:alpine
-      container_name: app-redis
+      container_name: ${PROJECT_NAME}-redis
 
     postgres:
       image: postgres:9.5-alpine
-      container_name: app-postgres
+      container_name: ${PROJECT_NAME}-postgres
       volumes:
          - "./sourcefiles/postgres:/var/lib/postgresql/data"
       environment:
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=postgres
-        - POSTGRES_DB=postgres
+        - POSTGRES_USER=${POSTGRES_USER}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+        - POSTGRES_DB=${POSTGRES_DB}
       ports:
        - "5432:5432"
       networks:
@@ -21,7 +21,7 @@ services:
                 ipv4_address: 172.28.1.2
     webserver:
       image: nginx:alpine
-      container_name: app-webserver
+      container_name: ${PROJECT_NAME}-webserver
       working_dir: /application
       volumes:
           - ./application:/application
@@ -34,7 +34,7 @@ services:
 
     php-fpm:
       build: sourcefiles/php-fpm
-      container_name: app-php-fpm
+      container_name: ${PROJECT_NAME}-php-fpm
       working_dir: /application
       volumes:
         - ./application:/application
