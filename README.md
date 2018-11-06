@@ -41,14 +41,14 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 + file conf nginx
 
 ### volumes:
-- nginx.conf
+- nginx folder
 - php-ini-overrides.ini
 - data(postgres)
 
 ### multiple servers:
 - create file conf of nginx in nginx directory you should use default.conf as exemple 
-- copy line 28 in docker-compose.yml and reference the file created, after paste the line down
-- ex: - ./sourcefiles/nginx/namesite.conf:/etc/nginx/conf.d/namesite.conf
+- restart containers: `docker-compose down` and `docker-composer up -d`
+
 
 # Troubleshooting
 
