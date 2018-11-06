@@ -25,7 +25,7 @@ services:
       working_dir: /application
       volumes:
           - ./application:/application
-          - ./sourcefiles/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+          - ./sourcefiles/nginx:/etc/nginx/conf.d
       ports:
        - "80:80"
       networks:
