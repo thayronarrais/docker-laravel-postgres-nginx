@@ -12,6 +12,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 + `cd laravel-docker-postgres` to the project directory.
 + `cd` to web and run the command to create a new Laravel project into **application** directory.
 + `cd ..` to back the project directory.
++ `cp env.example env` to use env config file
 + Run `docker-compose up -d` to start the containers.
 + Visit http://localhost to see your Laravel application.
 + Try to connect 127.0.0.1:5432 to access Postgres
