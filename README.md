@@ -27,7 +27,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 + redis:alpine
 + postgres:9.5-alpine
 + nginx:alpine
-+ php71-fpm:latest
++ php73-fpm:latest
 
 # SourceFiles
 
@@ -35,7 +35,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 
 
 ### php-fpm: Extensions PHP and PHP.INI
-+ Dockerfile: php7.1-pgsql php7.1-gd php-redis
++ Dockerfile: php7.3-pgsql php7.3-gd php-redis
 + php-ini-overrides.ini
 
 ### nginx: nginx.conf
