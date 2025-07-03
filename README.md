@@ -22,6 +22,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 + `docker-compose up -d` to start all containers
 + `docker-compose down` to stop all containers
 + If you need to restart after modifying *docker-compose.yml* restart with `docker-compose down` and `docker-compose up -d`
++ Run `pytest` to execute the tests
 
 # Images
 + redis:alpine
