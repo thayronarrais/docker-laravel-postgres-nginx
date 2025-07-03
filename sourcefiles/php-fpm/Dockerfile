@@ -1,4 +1,5 @@
-FROM phpdockerio/php73-fpm:latest
+ARG PHP_VERSION=7.3
+FROM phpdockerio/php${PHP_VERSION}-fpm:latest
 WORKDIR "/application"
 
 # Fix debconf warnings upon build
@@ -6,7 +7,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Install selected extensions and other stuff
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install  php7.3-pgsql php7.3-gd php-redis \
+    && apt-get -y --no-install-recommends install  php${PHP_VERSION}-pgsql php${PHP_VERSION}-gd php-redis \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 # Install git
