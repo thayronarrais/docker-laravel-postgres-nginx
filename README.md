@@ -13,6 +13,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 + `cd` to web and run the command to create a new Laravel project into **application** directory.
 + `cd ..` to back the project directory.
 + `cp .env.example .env` to use env config file
++ Edit `.env` and set `PHP_VERSION` to the desired PHP release (e.g. 7.4, 8.1)
 + Run `docker-compose up -d` to start the containers.
 + Visit http://localhost to see your Laravel application.
 + Try to connect 127.0.0.1:5432 to access Postgres
@@ -27,7 +28,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 + redis:alpine
 + postgres:9.5-alpine
 + nginx:alpine
-+ php71-fpm:latest
++ php-fpm image according to `PHP_VERSION` in `.env`
 
 # SourceFiles
 
@@ -35,7 +36,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 
 
 ### php-fpm: Extensions PHP and PHP.INI
-+ Dockerfile: php7.1-pgsql php7.1-gd php-redis
++ Dockerfile installs `pgsql` and `gd` for the configured PHP version along with `php-redis`
 + php-ini-overrides.ini
 
 ### nginx: nginx.conf
